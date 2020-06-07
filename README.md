@@ -95,7 +95,7 @@ PLease refer to [6],[7],[8] and [9].
 
 ## Further
 
-Check this out, **[Transformers]**(https://github.com/huggingface/transformers), (formerly known as ```pytorch-transformers``` and ```pytorch-pretrained-bert```) provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, T5, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over thousands of pretrained models in 100+ languages and deep interoperability between PyTorch & TensorFlow 2.0.[23]
+Check this out, **[Transformers](https://github.com/huggingface/transformers)**, (formerly known as ```pytorch-transformers``` and ```pytorch-pretrained-bert```) provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, T5, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over thousands of pretrained models in 100+ languages and deep interoperability between PyTorch & TensorFlow 2.0.[23]
 
 
 ## References (bare links)
