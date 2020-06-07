@@ -85,7 +85,7 @@ ORDER BY subreddit
     * top_p: Nucleus sampling: limits the generated guesses to a cumulative probability. (gets good results on a dataset with top_p=0.9)
     * truncate: Truncates the input text until a given sequence, excluding that sequence (e.g. if truncate='<|endoftext|>', the returned text will include everything before the first <|endoftext|>). It may be useful to combine this with a smaller length if the input texts are short.
     * include_prefix: If using truncate and include_prefix=False, the specified prefix will not be included in the returned text.
-- Premade google colab notebooks are also available [10][11][12].
+- Premade google colab notebooks are also available [10], [11] &[12].
 
 
 ## Modifying the Model
