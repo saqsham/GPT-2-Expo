@@ -69,6 +69,33 @@ ORDER BY subreddit
 
 ## Usage and/or Simple Implementaion
 
+
+### Working
+
+This repo contains a `keyword_encode.py` script which attempts to extract the keywords in an unsupervised manner (although you can provide your own keywords if you have them). The methodology is as follows for each text document:
+
+1. Extract the keywords from each document as "keywords" using spaCy, which both tokenizes keywords and tags their parts-of-speech.
+	* Only nouns, verbs, adjectives, and adverbs are extracted. Nouns use the raw version of the word (for best user experience when they input them manually) while the other POS use the lemmatized versions (to reduce overfitting but still provide information).
+	* Proper nouns, named entities, and compound nouns count as their own keyword.
+	* Pronouns and stop words are excluded from keywords.
+	* Keywords are deduped.
+2. Prepare the keywords in such a way that the document text is generated conditionally on the keywords.
+	* Normalize the keywords (replace spaces/punctuation w/ dashes). The keywords are *not* case-normalized for best user experience when specifying keywords.
+	* Shuffle the order of the keywords to prevent GPT-2 from cheating and learning when the order of the keywords should be written in the document proper.
+	* For each set of processed keywords in a document, create `repeat` random combinations (default: 3) of the keywords. This serves as a data augmentation of sorts, and prevents the model from overfitting on a given set of keywords.
+	* For each combination above, select a random number of *up to* `max_keywords` (default: 3), which are then shuffled, to prevent the neural network from a) learning the number of keywords as a hint to the length of the text and b) the order of the keywords in the resulting text.
+3. Write the keywords, then the document for each generated set of keywords.
+	* The documents are processed in batches with ray; after each batch is encoded, the batch is shuffled before writing to reduce leakage.
+
+The default case (passing a CSV of `titles`) generates `keywords`, and outputs a `.txt` of keywords and titles.
+
+The `keyword_decode.py` script contains functions for decoding bulk-generated encoded texts (e.g. generated through gpt-2-simple, albeit the native truncation is recommended in that use case). `decode_texts()` will extract the text from each of the specified taxonomic sections for the provided list of texts, and `decode_file()` can extract and decode all texts and write to a file.
+
+The encoding is tokenized using [spaCy](https://spacy.io) for more robust keyword tokenization and parallelized using [ray](https://github.com/ray-project/ray) in order to massively speed up encoding on large datasets.
+
+### Usage
+
+- In this repo there are two datasets, first finetune it using the `train_ask.py ` then only generate text.
 - run ```python train_ask.py```, it will download the model specified, and fintune your dataset over the model (124M is the deafault/hardcoded model), parameters:
     * restore_from: Set to fresh to start training from the base GPT-2, or set to latest to restart training from an existing checkpoint.
     * sample_every: Number of steps to print example output
@@ -86,6 +113,7 @@ ORDER BY subreddit
     * truncate: Truncates the input text until a given sequence, excluding that sequence (e.g. if truncate='<|endoftext|>', the returned text will include everything before the first <|endoftext|>). It may be useful to combine this with a smaller length if the input texts are short.
     * include_prefix: If using truncate and include_prefix=False, the specified prefix will not be included in the returned text.
 - Premade google colab notebooks are also available [10], [11] &[12].
+- Check the [report](./final_report.pdf) for implementation with images.
 
 
 ### Other useful information
@@ -126,11 +154,12 @@ The method GPT-2 uses to generate text is slightly different than those like oth
 * [ResetEra](https://www.resetera.com/threads/i-trained-an-ai-on-thousands-of-resetera-thread-conversations-and-it-created-hot-gaming-shitposts.112167/) — Generated video game forum discussions ([GitHub w/ dumps](https://github.com/minimaxir/resetera-gpt-2))
 * [/r/legaladvice](https://www.reddit.com/r/legaladviceofftopic/comments/bfqf22/i_trained_a_moreadvanced_ai_on_rlegaladvice/) — Title generation ([GitHub w/ dumps](https://github.com/minimaxir/legaladvice-gpt2))
 * [Hacker News](https://github.com/minimaxir/hacker-news-gpt-2) — Tens of thousands of generated Hacker News submission titles
+* [Examples which use Transformer](https://transformer.huggingface.co/)
 
 
 ## Modifying the Model
 
-PLease refer to [6],[7],[8] and [9].
+Please refer to [6],[7],[8] and [9].
 
 
 ## Further

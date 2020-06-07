@@ -10,7 +10,7 @@ if not os.path.isdir(os.path.join("models", model_name)):
 	gpt2.download_gpt2(model_name=model_name)   # model is saved into current directory under /models/124M/
 
 
-file_name = "reddit_titles.csv"
+file_name = "SFW.askreddit_titles.csv"
 if not os.path.isfile(file_name):
 	print("dataset not available")
 
@@ -23,5 +23,5 @@ gpt2.finetune(sess,
             restore_from='fresh',
             run_name='run1',
             print_every=10,
-            sample_every=100
+            sample_every=50
             )
