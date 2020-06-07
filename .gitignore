@@ -2,3 +2,4 @@ misc/*
 checkpoint/*
 models/*
 note.txt
+__pycache__/*

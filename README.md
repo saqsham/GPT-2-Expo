@@ -96,28 +96,28 @@ ORDER BY subreddit
 ## References (bare links)
 
 [1]. https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf
-[2]. https://github.com/openai/gpt-2
-[3]. https://github.com/minimaxir/gpt-2-simple
-[4]. https://minimaxir.com/2019/09/howto-gpt2/
-[5]. http://www.peterbloem.nl/blog/transformers
-[6]. https://github.com/google/sentencepiece
-[7]. https://github.com/openai/gpt-2/issues/114
-[8]. https://github.com/soaxelbrooke/python-bpe
-[9]. https://huggingface.co/transformers/model_doc/gpt2.html
-[10]. https://colab.research.google.com/drive/1RugXCYDcMvSACYNt9j0kB6zzqRKzAbBn#scrollTo=sUmTooTW3osf
-[11]. https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce#scrollTo=H7LoMj4GA4n_
-[12]. https://colab.research.google.com/drive/1qxcQ2A1nNjFudAGN_mcMOnvV9sF_PkEb#scrollTo=KBkpRgBCBS2_
-[13]. https://console.cloud.google.com/bigquery
-[14]. https://www.reddit.com/r/legaladviceofftopic/comments/bxi869/i_trained_an_ai_to_generate_the_ultimate/
-[15]. https://minimaxir.com/apps/gpt2-reddit/
-[16]. https://github.com/minimaxir/reddit-gpt-2-cloud-run
-[17]. https://github.com/minimaxir/gpt-2-keyword-generation
-[18]. https://www.reddit.com/r/SubSimulatorGPT2/
-[19]. https://www.reddit.com/r/SubSimulatorGPT2/comments/btfhks/what_is_rsubsimulatorgpt2/
-[20]. https://huggingface.co/gpt2
-[21]. https://huggingface.co/
-[22]. https://huggingface.co/models
-[23]. https://github.com/huggingface/transformers
+<br>[2]. https://github.com/openai/gpt-2
+<br>[3]. https://github.com/minimaxir/gpt-2-simple
+<br>[4]. https://minimaxir.com/2019/09/howto-gpt2/
+<br>[5]. http://www.peterbloem.nl/blog/transformers
+<br>[6]. https://github.com/google/sentencepiece
+<br>[7]. https://github.com/openai/gpt-2/issues/114
+<br>[8]. https://github.com/soaxelbrooke/python-bpe
+<br>[9]. https://huggingface.co/transformers/model_doc/gpt2.html
+<br>[10]. https://colab.research.google.com/drive/1RugXCYDcMvSACYNt9j0kB6zzqRKzAbBn#scrollTo=sUmTooTW3osf
+<br>[11]. https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce#scrollTo=H7LoMj4GA4n_
+<br>[12]. https://colab.research.google.com/drive/1qxcQ2A1nNjFudAGN_mcMOnvV9sF_PkEb#scrollTo=KBkpRgBCBS2_
+<br>[13]. https://console.cloud.google.com/bigquery
+<br>[14]. https://www.reddit.com/r/legaladviceofftopic/comments/bxi869/i_trained_an_ai_to_generate_the_ultimate/
+<br>[15]. https://minimaxir.com/apps/gpt2-reddit/
+<br>[16]. https://github.com/minimaxir/reddit-gpt-2-cloud-run
+<br>[17]. https://github.com/minimaxir/gpt-2-keyword-generation
+<br>[18]. https://www.reddit.com/r/SubSimulatorGPT2/
+<br>[19]. https://www.reddit.com/r/SubSimulatorGPT2/comments/btfhks/what_is_rsubsimulatorgpt2/
+<br>[20]. https://huggingface.co/gpt2
+<br>[21]. https://huggingface.co/
+<br>[22]. https://huggingface.co/models
+<br>[23]. https://github.com/huggingface/transformers
 
 
 ## Team Members
